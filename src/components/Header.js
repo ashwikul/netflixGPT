@@ -54,7 +54,7 @@ const Header = () => {
     return () => unscubscribe();
   }, []);
   return (
-    <div className="p-4 bg-gradient-to-b from-black absolute z-10 flex justify-between w-full">
+    <div className="px-16 py-4 bg-gradient-to-b from-black absolute z-10 flex justify-between w-full">
       <img src={LOGO} alt="logo" className="w-32 " />
       {user && (
         <div
