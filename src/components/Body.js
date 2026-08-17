@@ -1,16 +1,17 @@
 import React from "react";
-import Header from "./Header";
-import Browse from "./Browse";
+import Header from "./header/Header";
+import Browse from "./browse/Browse";
 import { Route, Routes } from "react-router-dom";
-import Login from "./Login";
+import Login from "./login/Login";
 import { Provider } from "react-redux";
-import appStore from "../utils/appStore";
+import appStore from "../store/appStore";
+import GPTSearch from "./gpt/GptSearch";
 
 const Body = () => {
   return (
     <Provider store={appStore}>
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/browse" element={<Browse />}></Route>
       </Routes>
     </Provider>

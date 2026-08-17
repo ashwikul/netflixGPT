@@ -1,17 +1,17 @@
 import React, { useRef, useState } from "react";
-import Header from "./Header";
-import { validateData } from "../utils/validate";
+import Header from "../header/Header";
+import { validateData } from "../../utils/validate";
 
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import appStore from "../utils/appStore";
-import { addUser } from "../utils/userSlice";
-import { BG_COVER } from "../utils/constants";
+import appStore from "../../store/appStore";
+import { addUser } from "../../store/userSlice";
+import { BG_COVER } from "../../utils/constants";
 
 const Login = () => {
   const [signInFormPage, setSignInFormPage] = useState(true);
@@ -32,8 +32,6 @@ const Login = () => {
       password.current.value,
     );
 
-    console.log(isFormValid);
-
     if (isFormValid !== null) {
       setErrorMsg(isFormValid);
       return;
@@ -50,7 +48,6 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           setErrorMsg(null);
-          console.log("user created", user);
           //update full name
 
           updateProfile(auth.currentUser, {
@@ -59,9 +56,7 @@ const Login = () => {
             .then(() => {
               // Profile updated!
               // ...
-              console.log("user object", user);
               const { displayName, email } = user;
-              console.log(displayName, email);
               dispatch(addUser({ displayName, email }));
             })
             .catch((error) => {
@@ -87,7 +82,6 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           setErrorMsg(null);
-          console.log("user created", user);
         })
         .catch((error) => {
           const errorCode = error.code;

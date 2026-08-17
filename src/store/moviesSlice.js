@@ -8,6 +8,7 @@ const moviesSlice = createSlice({
     topRatedMovies: null,
     upcomingMovies: null,
     teaserData: null,
+    showGptView: false,
   },
   reducers: {
     addNowPlayingMovies: (state, action) => {
@@ -25,6 +26,9 @@ const moviesSlice = createSlice({
     addTeaserData: (state, action) => {
       state.teaserData = action.payload;
     },
+    toggleGptView: (state, action) => {
+      state.showGptView = !state.showGptView;
+    },
   },
 });
 
@@ -34,5 +38,6 @@ export const {
   addTopRatedMovies,
   addUpcomingMovies,
   addTeaserData,
+  toggleGptView,
 } = moviesSlice.actions;
 export default moviesSlice.reducer;

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { API_OPTIONS } from "../utils/constants";
+import { API_OPTIONS } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addTeaserData } from "../utils/moviesSlice";
-import useGetHeroTrailerData from "../hooks/useGetHeroTrailerData";
+import { addTeaserData } from "../../store/moviesSlice";
+import useGetHeroTrailerData from "../../hooks/useGetHeroTrailerData";
 
 const VideoBackground = ({ id }) => {
   useGetHeroTrailerData(id);

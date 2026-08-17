@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { addTeaserData } from "../utils/moviesSlice";
+import { addTeaserData } from "../store/moviesSlice";
 
 function useGetHeroTrailerData(id) {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ function useGetHeroTrailerData(id) {
       (clipObj) => clipObj.type === "Trailer",
     );
     const teaserData = teaserList.length > 0 ? teaserList[0] : data[0];
-    console.log("trailer data", teaserData);
     dispatch(addTeaserData(teaserData));
   };
   useEffect(() => {
