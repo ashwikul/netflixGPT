@@ -5,8 +5,14 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import { useSelector } from "react-redux";
 import GptPage from "../gpt/GptPage";
+import { useSearchParams } from "react-router-dom";
+import MovieDetailsModal from "../movie/MovieDetailsModal";
 
 const Browse = () => {
+  const [searchParams] = useSearchParams();
+  const movieId = searchParams.get("movie");
+  console.log("searchParams", movieId);
+
   const nowPlayingMovies = useNowPayingMovies();
   const gptView = useSelector((store) => store.movies.showGptView);
   return (
@@ -18,6 +24,7 @@ const Browse = () => {
         <>
           <MainContainer />
           <SecondaryContainer />
+          {movieId && <MovieDetailsModal movieId={movieId} />}
         </>
       )}
     </div>

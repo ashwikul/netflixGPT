@@ -9,7 +9,7 @@ const MovieList = ({ title, list }) => {
       <h1 className="text-white font-bold text-xl mb-4 pl-16">{title}</h1>
       <div className="w-full flex gap-4 overflow-x-auto ">
         {list.map((movie) => {
-          return <MovieCard poster={movie.backdrop_path} key={movie.id} />;
+          return <MovieCard movie={movie} key={movie.id} />;
         })}
       </div>
     </div>

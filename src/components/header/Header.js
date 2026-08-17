@@ -68,7 +68,7 @@ const Header = () => {
             {gptView ? "Browse" : "Search"}
           </button>
           <div
-            className="bg-slate-800 flex rounded-md cursor-pointer"
+            className=" flex rounded-md cursor-pointer"
             onClick={handleShowMenu}
           >
             <img
@@ -76,9 +76,9 @@ const Header = () => {
               alt="user logo"
               className="w-10 rounded-md"
             />
-            <span className="p-2 text-white">⌄</span>
+            <span className="p-2 text-white text-xl">⌄</span>
             {showMenu && (
-              <div className="bg-slate-800 rounded-md text-white p-2 absolute top-16 right-3">
+              <div className="bg-slate-800 opacity-80 rounded-md text-white p-2 absolute top-16 right-3">
                 <div onClick={handleSignout}>Sign Out</div>
               </div>
             )}
