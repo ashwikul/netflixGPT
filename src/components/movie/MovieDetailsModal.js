@@ -18,8 +18,6 @@ const MovieDetailsModal = ({ movieId }) => {
     };
   }, []);
   const handleClose = () => {
-    console.log("onClick");
-
     setSearchParams({});
   };
   if (!movieDetails) return null;

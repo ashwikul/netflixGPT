@@ -22,7 +22,6 @@ const useGetMovieSuggestions = () => {
 
         dispatch(addTmdbMovieResult(results));
       } catch (error) {
-        console.error("Failed to fetch movie data:", error);
       } finally {
         dispatch(setLoading(false));
       }

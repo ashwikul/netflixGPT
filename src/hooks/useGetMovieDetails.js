@@ -10,7 +10,6 @@ const useGetMovieDetails = (movieId) => {
     );
     const res = await data.json();
     setMovieDetails(res);
-    console.log("res", res);
   };
 
   useEffect(() => {

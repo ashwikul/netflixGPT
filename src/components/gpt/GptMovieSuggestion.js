@@ -10,7 +10,6 @@ const GptMovieSuggestion = () => {
   const { suggestions, tmdbMovieResult, isLoading } = useSelector(
     (store) => store.gpt,
   );
-  console.log("tmdbMovieResults", tmdbMovieResult);
 
   const hasMovies = tmdbMovieResult?.some((movieList) => movieList?.length > 0);
 

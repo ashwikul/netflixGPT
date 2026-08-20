@@ -11,7 +11,6 @@ import MovieDetailsModal from "../movie/MovieDetailsModal";
 const Browse = () => {
   const [searchParams] = useSearchParams();
   const movieId = searchParams.get("movie");
-  console.log("searchParams", movieId);
 
   const nowPlayingMovies = useNowPayingMovies();
   const gptView = useSelector((store) => store.movies.showGptView);

@@ -28,7 +28,6 @@ const GptSearch = () => {
     const data = await getGroqChatCompletion();
     const gptResults = data.choices[0]?.message?.content || "";
     const gptResultsArray = gptResults.split(",");
-    console.log(gptResults);
     dispatch(addSuggestions(gptResultsArray));
   };
   return (
